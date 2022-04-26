@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+		.bg {
+			background-color: black;
+		}
+	</style>
+</head>
+<body style="background: #c0eaff;">
+	<!-- это div-родитель -->
+	<div class="col-7 mx-auto mt-5">
+		<h1 class="task">Найди спрятанное золото. Попробуй собрать 6 баллов</h1>
+	</div>
+	<div class="col-3 mx-auto mt-3 px-4 mb-0 mp-0" style="border-top: 10px solid blue; border-right: 10px solid blue; border-left: 10px solid blue; border-bottom: 1px solid blue; border-top-right-radius: 8px; border-top-left-radius: 8px;">
+		<h1>Твой счёт: <span class="score">0</span> баллов</h1>
+	</div>
+		<!-- Дивы с нумерацией 1, 2, 3 и т.д. -->
+	<div class="mx-auto col-5" style="border: 10px solid blue; border-radius: 8px;">
+		
+		<!--Линия А-->
+		<div class="row">
+			<div class="col-2 px-5 py-5 bg border bang">
+				
+			</div>
+			<div class="col-2 px-5 py-5 bg border coin">
+				
+			</div>
+			<div class="col-2 px-5 py-5 bg border meme">
+				
+			</div>
+			<div class="col-2 px-5 py-5 bg border treasure">
+				
+			</div>
+			<div class="col-2 px-5 py-5 bg border meme">
+				
+			</div>
+			<div class="col-2 px-5 py-5 bg border coin">
+				
+			</div>
+		</div>
+		<!--Линия B-->
+		<div class="row">
+			<div class="col-2 px-5 py-5 bg border meme">
+
+			</div>
+			<div class="col-2 px-5 py-5 bg border meme">
+			
+			</div>
+			<div class="col-2 px-5 py-5 bg border coin">
+				
+			</div>
+			<div class="col-2 px-5 py-5 bg border meme">
+				
+			</div>
+			<div class="col-2 px-5 py-5 bang bg border ">
+				
+			</div>
+			<div class="col-2 px-5 py-5 bg border treasure">
+				
+			</div>
+		</div>
+		<!--Линия C-->
+		<div class="row">
+			<div class="col-2 px-5 py-5 bg border bang">
+				
+			</div>
+			<div class="col-2 px-5 py-5 bg border treasure">
+				
+			</div>
+			<div class="col-2 px-5 py-5 bg border meme">
+				
+			</div>
+			<div class="col-2 px-5 py-5 bg border coin">
+				
+			</div>
+			<div class="col-2 px-5 py-5 bg border meme">
+				
+			</div>
+			<div class="col-2 px-5 py-5 bg border meme">
+				
+			</div>	
+		</div>
+		<!--Линия D-->
+		<div class="row">
+			<div class="col-2 px-5 py-5 bg border coin">
+				
+			</div>
+			<div class="col-2 px-5 py-5 bg border meme ">
+				
+			</div>
+			<div class="col-2 px-5 py-5 bg border treasure">
+				
+			</div>
+			<div class="col-2 px-5 py-5 bg border meme">
+				
+			</div>
+			<div class="col-2 px-5 py-5 bg border bang">
+				
+			</div>
+			<div class="col-2 px-5 py-5 bg border meme">
+				
+			</div>
+		</div>
+		<!--Линия E-->
+		<div class="row">
+			<div class="col-2 px-5 py-5  bg border treasure">
+				
+			</div>
+			<div class="col-2 px-5 py-5  bg border coin">
+				
+			</div>
+			<div class="col-2 px-5 py-5  bg border meme">
+				
+			</div>
+			<div class="col-2 px-5 py-5  bg border bang">
+				
+			</div>
+			<div class="col-2 px-5 py-5 bg border meme">
+				
+			</div>
+			<div class="col-2 px-5 py-5 bg border meme ">
+				
+			</div>
+		</div>
+		<!--Линия F-->
+		<div class="row">
+			<div class="col-2 px-5 py-5 bg border meme">
+				
+			</div>
+			<div class="col-2 px-5 py-5 bg border treasure">
+				
+			</div>
+			<div class="col-2 px-5 py-5 bg border meme">
+				
+			</div>
+			<div class="col-2 px-5 py-5 bg border coin">
+				
+			</div>
+			<div class="col-2 px-5 py-5 bg border bang">
+				
+			</div>
+			<div class="col-2 px-5 py-5 bg border meme">
+				
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		// Есть treasure bang meme coin
+		let sc = 0;
+		let scr = document.querySelector (".score")
+		let tr = document.querySelectorAll (".treasure")
+		let ba = document.querySelectorAll (".bang")
+		let me = document.querySelectorAll (".meme")
+		let co = document.querySelectorAll (".coin")
+
+		for(let i=0; i<6; i=i+1){
+			tr[i].onclick = function(){
+				tr[i].style.backgroundColor = "green"
+				tr[i].style.backgroundImage = "url(treasure.png)"
+				tr[i].style.backgroundSize = "100% 100%"
+				sc = sc + 1;
+				scr.innerHTML = sc
+				if(sc == 6){
+					alert("Победа!")
+				}
+			}
+		}
+		for(let i=0; i<7; i=i+1){
+			co[i].onclick = function(){
+				co[i].style.backgroundColor = "green"
+				co[i].style.backgroundImage = "url(coin.png)"
+				co[i].style.backgroundSize = "100% 100%"
+				sc = sc + 1;
+				scr.innerHTML = sc
+				if(sc == 6){
+					alert("Победа!")
+				}
+			}
+		}
+
+		for(let i=0; i<17; i=i+1){
+			me[i].onclick = function(){
+				me[i].style.backgroundImage = "url(mem.jpg)"
+				me[i].style.backgroundSize = "100% 100%"
+			}
+		}
+
+		for(let i=0; i<6; i=i+1){
+			ba[i].onclick = function(){
+				ba[i].style.backgroundColor = "red"
+				ba[i].style.backgroundImage = "url(bang.png)"
+				ba[i].style.backgroundSize = "100% 100%"
+				sc = sc - 1;
+				scr.innerHTML = sc
+				if(sc <= 0){
+					alert("Ты проиграл!")
+				}
+			}
+		}
+		
+	</script>
+</body>
+</html>
